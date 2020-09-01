@@ -9,15 +9,24 @@
 import UIKit
 
 class ProfileTableViewController: UITableViewController{
-    
+    var profiles: Profile?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let urlString = "https://www.instagram.com/weibirdmusic/?__a=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        if let url = URL(string: urlString){
+            let decoder = JSONDecoder()
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let data = data, let profileresults = try? decoder.decode(Profile.self, from: data){
+                    //print("has data")
+                    self.profiles = profileresults
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }else{
+                    print("no data")
+                }
+            }.resume()
+        }
     }
 
     // MARK: - Table view data source
@@ -35,21 +44,43 @@ class ProfileTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
-            print("cell1")
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! ProfileCell1TableViewCell
+            if let profile = profiles{
+                if let imagedata = try? Data(contentsOf: profile.graphql.user.profile_pic_url){
+                    cell1.profile_pic_url.image = UIImage(data: imagedata)
+                }
+                cell1.edge_owner_to_timeline_media.text = convertcount(count: profile.graphql.user.edge_owner_to_timeline_media.count)
+                cell1.edge_follow.text = convertcount(count: profile.graphql.user.edge_follow.count)
+                cell1.edge_followed_by.text = convertcount(count: profile.graphql.user.edge_followed_by.count)
+                cell1.full_name.text = profile.graphql.user.full_name
+                cell1.biography.text = profile.graphql.user.biography
+                cell1.external_url.text = "\(profile.graphql.user.external_url)"
+            
+            }
             return cell1
         }else if indexPath.section == 1{
-            print("cell2")
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! ProfileCell2TableViewCell
             return cell2
         }else if indexPath.section == 2{
             let cell3 = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! ProfileCell3TableViewCell
+            if let profile = profiles{
+                cell3.profiles = profile
+                DispatchQueue.main.async {
+                    cell3.collectionView.reloadData()
+                }
+            };
             return cell3
         }else if indexPath.section == 3{
             let cell4 = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! ProfileCell4TableViewCell
             return cell4
         }else{
             let cell5 = tableView.dequeueReusableCell(withIdentifier: "cell5", for: indexPath) as! ProfileCell5TableViewCell
+            if let profile = profiles{
+                cell5.profiles = profile
+                DispatchQueue.main.async {
+                    cell5.collectionView.reloadData()
+                }
+            }
             return cell5
         }
     }
@@ -69,6 +100,22 @@ class ProfileTableViewController: UITableViewController{
     }
     
     
+    func convertcount(count:Int)->String{
+        var countString = ""
+        if (count/100000000) != 0{
+            let count1 = (count/100000000)
+            let count2 = ((count%100000000)/10000000)
+            countString = "\(count1).\(count2)億"
+        }else if (count/10000) != 0{
+            let count3 = (count/10000)
+            let count4 = (count%10000)/1000
+            countString = "\(count3).\(count4)萬"
+            print(count4)
+        }else{
+            countString = "\(count)"
+        }
+        return countString
+    }
 
 
     /*

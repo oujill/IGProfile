@@ -107,17 +107,27 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5I-p3-lGY">
-                                                    <rect key="frame" x="0.0" y="19.5" width="394" height="123.5"/>
-                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <rect key="frame" x="0.0" y="19.5" width="394" height="81.5"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull </string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="external_url" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gQH-XJ-Y35">
+                                                    <rect key="frame" x="0.0" y="101" width="394" height="42"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="gTd-V2-hHY" secondAttribute="trailing" id="DI7-VF-MBe"/>
+                                                <constraint firstItem="gQH-XJ-Y35" firstAttribute="leading" secondItem="TdX-dG-IUL" secondAttribute="leading" id="HKZ-UM-Lrg"/>
                                                 <constraint firstAttribute="trailing" secondItem="T5I-p3-lGY" secondAttribute="trailing" id="Nkt-md-iXV"/>
                                                 <constraint firstItem="gTd-V2-hHY" firstAttribute="leading" secondItem="TdX-dG-IUL" secondAttribute="leading" id="PA5-jj-IFL"/>
+                                                <constraint firstAttribute="trailing" secondItem="gQH-XJ-Y35" secondAttribute="trailing" id="b8q-KO-0oF"/>
                                                 <constraint firstItem="T5I-p3-lGY" firstAttribute="leading" secondItem="TdX-dG-IUL" secondAttribute="leading" id="pCB-kk-iY4"/>
                                             </constraints>
                                         </stackView>
@@ -132,6 +142,15 @@
                                         <constraint firstItem="TdX-dG-IUL" firstAttribute="top" secondItem="MrV-ps-GPt" secondAttribute="bottom" constant="10" id="oNh-9o-OCV"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="biography" destination="T5I-p3-lGY" id="u4J-hW-8gP"/>
+                                    <outlet property="edge_follow" destination="fQa-38-i2S" id="7fh-1z-yhf"/>
+                                    <outlet property="edge_followed_by" destination="13o-O3-9vd" id="pd4-Oz-rxE"/>
+                                    <outlet property="edge_owner_to_timeline_media" destination="DwC-Pw-15v" id="PU4-Tk-Vvh"/>
+                                    <outlet property="external_url" destination="gQH-XJ-Y35" id="PlC-hb-g69"/>
+                                    <outlet property="full_name" destination="gTd-V2-hHY" id="hLk-Ej-wPs"/>
+                                    <outlet property="profile_pic_url" destination="CzG-5x-nys" id="5i7-t2-IvH"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="44" id="2nW-SE-FKX" customClass="ProfileCell2TableViewCell" customModule="IGProfile" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="285" width="414" height="44"/>
@@ -140,8 +159,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWK-q3-7kU">
-                                            <rect key="frame" x="10" y="0.0" width="394" height="44"/>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWK-q3-7kU">
+                                            <rect key="frame" x="10" y="6" width="394" height="33"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal" title="編輯個人檔案">
@@ -164,19 +183,52 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kT7-xW-bX0">
-                                            <rect key="frame" x="10" y="10" width="74" height="74"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="kT7-xW-bX0" secondAttribute="height" multiplier="1:1" id="t1E-yH-WyI"/>
-                                            </constraints>
-                                        </imageView>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k3t-zw-NCK">
+                                            <rect key="frame" x="10" y="5" width="404" height="84"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vK2-eZ-uUD">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileCell3TableViewCell" id="y9E-wj-dFV" customClass="ProfileCollectionViewCell3CollectionViewCell" customModule="IGProfile" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="-22" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jLn-pU-avg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cdt-Q7-f8j">
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="cdt-Q7-f8j" secondAttribute="trailing" id="Keq-9A-UAY"/>
+                                                            <constraint firstAttribute="bottom" secondItem="cdt-Q7-f8j" secondAttribute="bottom" id="Ssg-8x-zKX"/>
+                                                            <constraint firstItem="cdt-Q7-f8j" firstAttribute="leading" secondItem="jLn-pU-avg" secondAttribute="leading" id="VNH-YL-amj"/>
+                                                            <constraint firstItem="cdt-Q7-f8j" firstAttribute="top" secondItem="jLn-pU-avg" secondAttribute="top" id="tYh-0q-aVQ"/>
+                                                        </constraints>
+                                                    </collectionViewCellContentView>
+                                                    <connections>
+                                                        <outlet property="collectionImage" destination="cdt-Q7-f8j" id="bAK-Xl-g8W"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="kT7-xW-bX0" secondAttribute="bottom" constant="10" id="Btb-xP-aEu"/>
-                                        <constraint firstItem="kT7-xW-bX0" firstAttribute="top" secondItem="5oC-NY-6K0" secondAttribute="top" constant="10" id="Kfl-TI-cer"/>
-                                        <constraint firstItem="kT7-xW-bX0" firstAttribute="leading" secondItem="5oC-NY-6K0" secondAttribute="leading" constant="10" id="kC4-7m-TY0"/>
+                                        <constraint firstAttribute="trailing" secondItem="k3t-zw-NCK" secondAttribute="trailing" id="2og-5P-tAr"/>
+                                        <constraint firstItem="k3t-zw-NCK" firstAttribute="top" secondItem="5oC-NY-6K0" secondAttribute="top" constant="5" id="Mym-gb-fgJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="k3t-zw-NCK" secondAttribute="bottom" constant="5" id="cPQ-XE-vmZ"/>
+                                        <constraint firstItem="k3t-zw-NCK" firstAttribute="leading" secondItem="5oC-NY-6K0" secondAttribute="leading" constant="10" id="iWj-1b-uy9"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionView" destination="k3t-zw-NCK" id="xNV-Bf-LUB"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell4" rowHeight="68" id="TcS-Eh-Kbh" customClass="ProfileCell4TableViewCell" customModule="IGProfile" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="423" width="414" height="68"/>
@@ -377,6 +429,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bON-7C-Has" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ea7-TY-GMU">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

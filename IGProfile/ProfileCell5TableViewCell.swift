@@ -9,15 +9,25 @@
 import UIKit
 
 class ProfileCell5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+    var profiles: Profile?
     @IBOutlet weak var collectionView: UICollectionView!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        if let profiles = profiles{
+            return 12
+        }else{
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collection", for: indexPath) as! ProfileCollectionViewCell
-        cell.collectionImageView.image = UIImage(named: "pic1.jpg")
+        if let profiles = profiles, let imagedata = try? Data(contentsOf: profiles.graphql.user.edge_owner_to_timeline_media.edges[indexPath.row].node.display_url){
+            //print("profiles is ")
+            //print(profiles.graphql.user.edge_owner_to_timeline_media.edges[indexPath.row].node.display_url)
+            cell.collectionImageView.image = UIImage(data: imagedata)
+        }else{
+            print("no collectionview imagedata")
+        }
         return cell
     }
     

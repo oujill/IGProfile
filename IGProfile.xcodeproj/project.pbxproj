@@ -19,6 +19,8 @@
 		0451BBDA24F7987600246909 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451BBD924F7987600246909 /* ProfileTableViewController.swift */; };
 		0451BBE124F79F7500246909 /* ProfileCell1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451BBDF24F79F7500246909 /* ProfileCell1TableViewCell.swift */; };
 		0451BBE424F7F8CB00246909 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451BBE324F7F8CB00246909 /* ProfileCollectionViewCell.swift */; };
+		0451BBE624F8FB5000246909 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451BBE524F8FB5000246909 /* Profile.swift */; };
+		0451BBE824FA360A00246909 /* ProfileCollectionViewCell3CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451BBE724FA360A00246909 /* ProfileCollectionViewCell3CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		0451BBD924F7987600246909 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		0451BBDF24F79F7500246909 /* ProfileCell1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell1TableViewCell.swift; sourceTree = "<group>"; };
 		0451BBE324F7F8CB00246909 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		0451BBE524F8FB5000246909 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		0451BBE724FA360A00246909 /* ProfileCollectionViewCell3CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell3CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +73,12 @@
 			isa = PBXGroup;
 			children = (
 				0451BBBB24F7938600246909 /* AppDelegate.swift */,
-				0451BBBD24F7938600246909 /* SceneDelegate.swift */,
+				0451BBC924F7938A00246909 /* Info.plist */,
 				0451BBC124F7938600246909 /* Main.storyboard */,
+				0451BBBD24F7938600246909 /* SceneDelegate.swift */,
 				0451BBC424F7938A00246909 /* Assets.xcassets */,
 				0451BBC624F7938A00246909 /* LaunchScreen.storyboard */,
-				0451BBC924F7938A00246909 /* Info.plist */,
+				0451BBE524F8FB5000246909 /* Profile.swift */,
 				0451BBD924F7987600246909 /* ProfileTableViewController.swift */,
 				0451BBDF24F79F7500246909 /* ProfileCell1TableViewCell.swift */,
 				0451BBD124F7981800246909 /* ProfileCell2TableViewCell.swift */,
@@ -81,6 +86,7 @@
 				0451BBD524F7984400246909 /* ProfileCell4TableViewCell.swift */,
 				0451BBD724F7985400246909 /* ProfileCell5TableViewCell.swift */,
 				0451BBE324F7F8CB00246909 /* ProfileCollectionViewCell.swift */,
+				0451BBE724FA360A00246909 /* ProfileCollectionViewCell3CollectionViewCell.swift */,
 			);
 			path = IGProfile;
 			sourceTree = "<group>";
@@ -157,8 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0451BBDA24F7987600246909 /* ProfileTableViewController.swift in Sources */,
+				0451BBE624F8FB5000246909 /* Profile.swift in Sources */,
 				0451BBE424F7F8CB00246909 /* ProfileCollectionViewCell.swift in Sources */,
 				0451BBD624F7984400246909 /* ProfileCell4TableViewCell.swift in Sources */,
+				0451BBE824FA360A00246909 /* ProfileCollectionViewCell3CollectionViewCell.swift in Sources */,
 				0451BBD424F7983300246909 /* ProfileCell3TableViewCell.swift in Sources */,
 				0451BBD824F7985400246909 /* ProfileCell5TableViewCell.swift in Sources */,
 				0451BBBC24F7938600246909 /* AppDelegate.swift in Sources */,
